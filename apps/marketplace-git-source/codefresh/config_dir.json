@@ -1,0 +1,1 @@
+{"appName":"marketplace-git-source","userGivenName":"marketplace-git-source","destNamespace":"codefresh","destServer":"https://kubernetes.default.svc","srcPath":".","srcRepoURL":"https://github.com/codefresh-io/argo-hub.git","srcTargetRevision":"","labels":{"codefresh_io_entity":"git-source","codefresh_io_internal":"true"},"exclude":"","include":"workflows/**/*.yaml"}
