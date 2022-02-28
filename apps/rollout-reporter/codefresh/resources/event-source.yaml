@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/managed-by: cf
+  name: rollout-reporter
+  namespace: codefresh
+spec:
+  eventBusName: codefresh-eventbus
+  resource:
+    analysisruns:
+      eventTypes:
+      - ADD
+      - UPDATE
+      - DELETE
+      filter:
+        createdBy: null
+      group: argoproj.io
+      namespace: codefresh
+      resource: analysisruns
+      version: v1alpha1
+    replicasets:
+      eventTypes:
+      - ADD
+      - UPDATE
+      - DELETE
+      filter:
+        createdBy: null
+      group: apps
+      namespace: codefresh
+      resource: replicasets
+      version: v1
+    rollouts:
+      eventTypes:
+      - ADD
+      - UPDATE
+      - DELETE
+      filter:
+        createdBy: null
+      group: argoproj.io
+      namespace: codefresh
+      resource: rollouts
+      version: v1alpha1
+  template:
+    serviceAccountName: rollout-reporter-sa
+status: {}
