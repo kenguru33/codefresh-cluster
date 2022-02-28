@@ -6,6 +6,8 @@ metadata:
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
+  labels:
+    codefresh.io/entity: runtime
   name: codefresh
   namespace: codefresh
 spec:
