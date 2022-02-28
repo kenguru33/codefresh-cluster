@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/protocol: https
+    ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/backend-protocol: https
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  creationTimestamp: null
+  name: codefresh-workflows-ingress
+  namespace: codefresh
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: argo-server
+            port:
+              number: 2746
+        path: /workflows(/|$)(.*)
+        pathType: ImplementationSpecific
+status:
+  loadBalancer: {}
