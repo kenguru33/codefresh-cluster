@@ -1,0 +1,4 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- github.com/codefresh-io/cli-v2/manifests/app-proxy?ref=v0.0.263
