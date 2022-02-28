@@ -1,0 +1,1 @@
+{"appName":"events","userGivenName":"events","destNamespace":"codefresh","destServer":"https://kubernetes.default.svc","srcPath":"apps/events/overlays/codefresh","srcRepoURL":"https://github.com/kenguru33/codefresh-cluster.git","srcTargetRevision":"","labels":{"codefresh_io_entity":"component","codefresh_io_internal":"true"}}
